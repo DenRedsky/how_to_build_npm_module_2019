@@ -7,12 +7,13 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   mode: 'production',
   entry: {
-    lib: path.resolve('src', 'index.js'),
+    main: path.resolve('src', 'index.js'),
+    button: path.resolve('src', 'button', 'index.jsx'),
+    rocketButton: path.resolve('src', 'rocketButton', 'index.jsx'),
   },
   output: {
-    filename: 'index.js',
+    filename: ({ chunk }) => chunk.name === 'main' ? 'index.js' : '[name]/index.js',
     path: path.resolve('lib'),
-    library: 'lib',
     libraryTarget: 'commonjs2'
   },
   resolve: {
@@ -75,7 +76,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCss({ filename: 'index.css' }),
+    new MiniCss({ filename: '[name]/index.css' }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/,
       cssProcessorOptions: {

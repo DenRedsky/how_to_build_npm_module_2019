@@ -10,7 +10,7 @@ const Button = ({ onClick, children, className }) => (
     className={ cn(style.button, className) }
     type="button"
   >
-    { children }
+    { children }  = SIMPLE BUTTON
   </button>
 );
 

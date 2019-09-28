@@ -12,7 +12,7 @@ const RocketButton = ({ onClick, children, className }) => (
     className={ cn('button', className) }
     type="button"
   >
-    { children }
+    { children } ROCKET BUTTON
   </button>
 );
 

@@ -1,13 +1,19 @@
 {
   "name": "@denredsky/example2019",
-  "keywords": ["example", "npm-package", "webpack", "webpack4"],
-  "version": "0.0.4",
+  "keywords": [
+    "example",
+    "npm-package",
+    "webpack",
+    "webpack4"
+  ],
+  "version": "0.0.8",
   "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/DenRedsky/how_to_build_npm_module_2019.git"
   },
   "main": "lib/index.js",
+  "module": "lib/index.js",
   "license": "MIT",
   "files": [
     "lib"
@@ -16,10 +22,10 @@
   "author": "Denis Krasnovskiy",
   "dependencies": {
     "classnames": "2.2.6",
-    "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react": "16.9.0"
   },
   "devDependencies": {
+    "react-dom": "16.9.0",
     "@babel/core": "7.6.2",
     "@babel/plugin-proposal-class-properties": "7.5.5",
     "@babel/preset-env": "7.6.2",
