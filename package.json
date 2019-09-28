@@ -1,6 +1,8 @@
 {
   "name": "@denredsky/example2019",
-  "version": "0.0.1",
+  "keywords": ["example", "npm-package", "webpack", "webpack4"],
+  "version": "0.0.4",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/DenRedsky/how_to_build_npm_module_2019.git"
@@ -22,7 +24,7 @@
     "@babel/plugin-proposal-class-properties": "7.5.5",
     "@babel/preset-env": "7.6.2",
     "@babel/preset-react": "7.0.0",
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "9.6.1",
     "babel-eslint": "10.0.3",
     "babel-loader": "8.0.6",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
@@ -50,8 +52,8 @@
   },
   "scripts": {
     "dev": "webpack --env=dev --progress",
-    "build": "webpack --env=prod --progress",
-    "do-publish": "npm run build",
+    "build": "BABEL_ENV=production webpack --env=prod --progress",
+    "make-publish": "npm run build && npm publish",
     "start": "webpack-dev-server --env=dev"
   }
 }
