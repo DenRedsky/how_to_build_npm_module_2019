@@ -1,0 +1,25 @@
+$black = #242629
+$red = #ff6a59
+
+.button
+  -webkit-appearance none
+  font-family 'Roboto', sans-serif
+  cursor pointer
+  min-width 1.7rem
+  height 4rem
+  border-radius .5rem
+  background-color $red
+  border solid .1rem $black
+  user-select none
+  color $black
+  outline none
+  font-size 1.4rem
+  font-weight 500
+  padding 0 2rem
+  transition background-color .2s
+
+  &:hover
+    background-color darken($red, 5%)
+
+  &:active
+    background-color darken($red, 10%)

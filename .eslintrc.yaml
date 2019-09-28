@@ -1,0 +1,150 @@
+---
+extends: eslint-config-airbnb
+
+env:
+  es6: true
+  browser: true
+  node: true
+
+parser: babel-eslint
+
+parserOptions:
+  ecmaVersion: 7
+  ecmaFeatures:
+    jsx: true
+    classes: true
+
+rules:
+  # Основные правила ESLint (http://eslint.org/docs/rules/)
+
+  # Скобки вокруг аргумента
+  arrow-parens: off
+  class-methods-use-this: off
+  # Запятые в конце перечислений (объектов и массивов)
+  comma-dangle: off
+  # Указание значения при return
+  consistent-return: off
+  # Использование require только в глобальном scope
+  global-require: off
+  # Минимальная длина имен (по-умолчанию от 2 символов)
+  id-length:
+  - error
+  - exceptions: # исключения
+    - _
+    - x
+    - y
+    - i
+  # Отступы
+  indent:
+  - error
+  - 2 # 2 пробела
+  - SwitchCase: 1 # тот же отступ
+  # Максимальная длина строки кода
+  max-len:
+  - warn
+  - 200
+  # Писать с большой буквы только имена классов (конструкторов)
+  new-cap:
+  - error
+  - capIsNewExceptions: # исключения
+    - SortableContainer
+    - SortableElement
+    - List
+    - Map
+    - Set
+  # Запрет использолвания alert
+  no-alert: error
+  # Запрет использования console
+  no-console: off
+  # Запрет использования debugger
+  no-debugger: warn
+  # Запрет использования нескольких операторов в строке без использования скобок
+  no-mixed-operators: off
+  # Запрет использования оператора ++
+  no-plusplus: off
+  # Запрет использвания присвоения внутри return, разрешено со скобками
+  no-return-assign:
+  - warn
+  - except-parens
+  # Запрет подчеркиваний по краям имен
+  no-underscore-dangle: off
+  # Отступы от фигурных скобок объектов
+  object-curly-spacing:
+  - error
+  - always
+  # Кавычки вокруг ключей объектов
+  quote-props:
+  - error
+  - consistent # единообразно с остальными ключами объекта
+  # Отступы от фигурных скобок шаблонных строк
+  template-curly-spacing:
+  - error
+  - always
+  # Использование темплейтов предпочтительно, (отключенно из-за предпочтений использования темплейтов в темплейтах)
+  prefer-template: off
+  # This rule enforces consistent line breaks inside parentheses of function parameters or arguments
+  #(отключенно из-за комментов в prop-types)
+  function-paren-newline: off
+
+  # import (https://github.com/benmosher/eslint-plugin-import#rules)
+
+  # Обязательное использование расширений при импорте файлов
+  import/extensions:
+  - error
+  - js: never # Кроме JS-файлов
+  # Запрет использования зависимостей, не объявленных в package.json (отключенно из-за использования алиасов)
+  import/no-extraneous-dependencies: off
+  # Запрет использования зависимостей, которые не могут быть разрешены через nodeJS
+  import/no-unresolved: off
+  # Использовать export default в модулях с одним export
+  import/prefer-default-export: off
+
+  # react (https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules)
+
+  # Обязательное использования конкретных propTypes (arrayOf, shape) вместо any, array, object
+  react/forbid-prop-types: warn
+  # Отступы от фигурных скобок jsx-свойств
+  react/jsx-curly-spacing:
+  - error
+  - always
+  # Расширения файлов, которые могут содержать JSX-код
+  react/jsx-filename-extension:
+  - error
+  - extensions:
+    - ".js"
+    - ".jsx"
+  # Использовать функции вместо компонентов (или PureComponent)
+  react/prefer-stateless-function: off
+  # Требовать указание всех propType
+  react/prop-types: warn
+  # Требовать указание defaultProps для всех необязательных props
+  react/require-default-props: warn
+  # Строгий порядок методов компонента (очень сильно мешает в разработке)
+  react/sort-comp: off
+  # Избегать использования индекса массива в качестве key (для правильной перерисовки при изменении массива)
+  react/no-array-index-key: off
+  # Избегать использования findDOMNode
+  react/no-find-dom-node: warn
+  # Избегать определине нескольких компонентов в одном файле
+  react/no-multi-comp: warn
+
+  # jsx-a11y (https://github.com/evcohen/eslint-plugin-jsx-a11y#supported-rules)
+
+  # (Устаревшее правило, скорее всего надо будет убрать при следующем апдейте)
+  jsx-a11y/href-no-hash: off
+  # Обязательное указания for для label
+  jsx-a11y/label-has-for: off
+  # Запрет использования автофокуса
+  jsx-a11y/no-autofocus: off
+  # Запрет интерактивных событий на статических элементах (div, span)
+  jsx-a11y/no-static-element-interactions: off
+  # Запрет интерактивных событий на неинтерактивных элементах
+  jsx-a11y/no-noninteractive-element-interactions: warn
+  # Запрет положительных значений tabindex (для соответствия порядка верстки и расположения элементов)
+  jsx-a11y/tabindex-no-positive: warn
+  # Запрет на исользование медиа без заголовков
+  jsx-a11y/media-has-caption: off
+  # Обязательный эвент для клавиатуры для людей с ограниченными возможностями
+  jsx-a11y/click-events-have-key-events: off
+  # Проверяет href на ссылке
+  jsx-a11y/anchor-is-valid: off
