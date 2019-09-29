@@ -6,8 +6,7 @@
     "webpack",
     "webpack4"
   ],
-  "version": "0.0.8",
-  "sideEffects": false,
+  "version": "0.0.10",
   "repository": {
     "type": "git",
     "url": "https://github.com/DenRedsky/how_to_build_npm_module_2019.git"

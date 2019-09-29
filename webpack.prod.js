@@ -76,7 +76,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCss({ filename: '[name]/index.css' }),
+    new MiniCss({ moduleFilename: ({ name }) => name === 'main' ? 'index.css' : '[name]/index.css' }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/,
       cssProcessorOptions: {
