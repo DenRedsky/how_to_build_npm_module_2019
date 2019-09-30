@@ -3,10 +3,7 @@ module.exports = {
     '@babel/preset-react',
     ['@babel/preset-env', {
       modules: false,
-      loose: true,
-      targets: {
-        browsers: ['last 2 versions', 'not dead']
-      }
+      loose: true
     }]
   ],
   plugins: [

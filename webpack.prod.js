@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     main: path.resolve('src', 'index.js'),
     button: path.resolve('src', 'button', 'index.jsx'),
-    rocketButton: path.resolve('src', 'rocketButton', 'index.jsx'),
+    rocketButton: path.resolve('src', 'rocketButton', 'index.jsx')
   },
   output: {
     filename: ({ chunk }) => chunk.name === 'main' ? 'index.js' : '[name]/index.js',
@@ -20,12 +20,11 @@ module.exports = {
     modules: ['node_modules'],
     extensions: ['.jsx', '.styl', '.js']
   },
-  externals: {
-    'react': 'react',
-    'prop-types': 'prop-types',
-    'classnames': 'classnames',
-    'classnames/bind': 'classnames/bind'
-  },
+  externals: [
+    'react',
+    'classnames',
+    'classnames/bind'
+  ],
   devtool: false,
   stats: {
     assets: true,
@@ -58,7 +57,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[hash:base64:5]'
+                localIdentName: '[local]-[hash:base64:5]'
               }
             }
           },

@@ -9,12 +9,16 @@ const goToSpace = () => console.warn('Поехали!');
 const App = () => (
   <div className={ style.app }>
     <div className={ style.app__form }>
-      <Button>
-        CLICK ME!
-      </Button>
-      <RocketButton onClick={ goToSpace } className={ style.app__button }>
-        WANT TO SPACE
-      </RocketButton>
+      <div>
+        <Button>
+          CLICK ME!
+        </Button>
+      </div>
+      <div>
+        <RocketButton onClick={ goToSpace } className={ style.app__button }>
+          WANT TO SPACE
+        </RocketButton>
+      </div>
     </div>
   </div>
 );
